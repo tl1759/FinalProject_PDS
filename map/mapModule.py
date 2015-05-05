@@ -16,8 +16,8 @@ import sys
 import shapefile
 import pandas as pd
 import numpy as np
-from cleanupModule import *
-from plotModule import *
+from cleanupdata import *
+from plotdata import *
 from userinput import *
 from prompt import *
 if __name__ == '__main__':
