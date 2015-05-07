@@ -16,6 +16,7 @@ from math import log
 from bokeh.plotting import *
 from bokeh.sampledata.iris import flowers
 from bokeh.objects import HoverTool
+from bokeh.plotting import reset_output
 from collections import OrderedDict
 import operator
 class plotMaps():
@@ -24,9 +25,10 @@ class plotMaps():
 		self.zipBoroughdata = zipBoroughdata
 
 	def TopAgencyforEachzipCode(self,mapPoints,dat):
+
 		"""This method is to create a choropleth map for NYC in which the shape color for each zipcode represents its 
 		top agency in number of complaints."""
-		
+		reset_output()
 		plot = figure()
 		polygons = {'lat_list':[],'lng_list':[],'color_list':[]} ##make a dict to 
 		record_index = 0
@@ -103,6 +105,7 @@ class plotMaps():
 	
 
 	def comparetowagencies(self,mapPoints,dat):
+		reset_output()
 		"""This method is used to create an analogous map for NYC to compare two agencies in terms of number of complaints 
 		for each zip code"""
 		polygons = {'lat_list':[],'lng_list':[],'color_list':[]}# creates a dict for zip
@@ -180,6 +183,7 @@ class plotMaps():
 		show()
 
 	def plotzipcomplaints(self,mapPoints,dat):
+		reset_output()
 		"""This method is to draw a circle for each zipcode in NYC. The size of the circle is proportional to 
 		the number of complaints in the zipcode"""
 		

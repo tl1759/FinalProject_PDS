@@ -16,17 +16,17 @@ import sys
 import shapefile
 import pandas as pd
 import numpy as np
-from cleanupdata import *
-from plotdata import *
+from cleanupModule import *
+from plotmapModule import *
 from userinput import *
 from prompt import *
 if __name__ == '__main__':
 	print "Now it's loading the data and it may take some time, thank you for your patience!"
 	try:
 	#Read in the complaintsdata 
-		complaintsdata = pd.read_csv('311_data_2014_clean.csv',low_memory = False)
-		zipcodedata = pd.read_csv('zip_borough.csv') #load zipcode data with pandas
-		dat = shapefile.Reader('tl_2013_us_zcta510')# load shapefile
+		complaintsdata = pd.read_csv(sys.argv[1],low_memory = False)
+		zipcodedata = pd.read_csv(sys.argv[2]) #load zipcode data with pandas
+		dat = shapefile.Reader(sys.argv[3])# load shapefile
 		zipBorough = getzipBorough(zipcodedata)
 		k  = plotMaps(zipBorough)
 	except IOError:

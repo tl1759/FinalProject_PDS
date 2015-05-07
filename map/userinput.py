@@ -13,7 +13,7 @@ import shapefile
 import pandas as pd
 import numpy as np
 from cleanupModule import *
-from plotModule import *
+from plotmapModule import *
 import sys
 agencyList = ['HPD','DOT','NYPD','FDNY','DEP','DOHMH','DPR','TLC']
 def getinput():
