@@ -28,6 +28,7 @@ class plotMaps():
 
 		"""This method is to create a choropleth map for NYC in which the shape color for each zipcode represents its 
 		top agency in number of complaints."""
+		
 		reset_output()
 		plot = figure()
 		polygons = {'lat_list':[],'lng_list':[],'color_list':[]} ##make a dict to 
